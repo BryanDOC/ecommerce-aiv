@@ -1,7 +1,7 @@
 import useGetProductField from '@/api/getProductField'
 import React from 'react'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { Label } from '@/components/ui/label'
+// import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+// import { Label } from '@/components/ui/label'
 import { FilterTypes } from '@/types/filters'
 import { Chewy } from 'next/font/google'
 
