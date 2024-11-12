@@ -3,21 +3,16 @@ export type ProductType = {
     
         productName:string;
         slug:string;
-        discount:number;
+        discount:number | null;
         description:string;
         active:boolean;
         isFeatured:boolean;
         origin: string;
         price: number;
-        images:{
-            data:{
-                id:number;
-                attributes:{
-                    url:string;
-                }
-            }[]
+        images:
+           [];
 
-        },
+        
         category:{
             data:{
                 slug:string;

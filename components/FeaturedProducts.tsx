@@ -31,12 +31,12 @@ const FeaturedProducts = () => {
           {
             result !== null && (
               result.map((product: ProductType) => {
-                const {id, productName, images, discount,price} = product
+                const {id, productName, images, discount,price, slug} = product
                 
                 
                 return (
                   <CarouselItem key={id} className='xl:basis-1/4 flex lg:basis-1/3 md:basis-1/2 group items-center justify-center'>
-                    <CardProducts productName={productName} images={images} price={price} discount={discount}/>
+                    <CardProducts productName={productName} images={images} price={price} discount={discount} slug={slug}/>
                   </CarouselItem>
                 )
             })

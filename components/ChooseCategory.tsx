@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
 import { useGetCategories } from '@/api/getProducts'
-import React, { useState } from 'react'
+import React from 'react'
 import { ResponseType } from '@/types/response'   
 import { CategoryType } from '@/types/category'
 import Link from 'next/link'

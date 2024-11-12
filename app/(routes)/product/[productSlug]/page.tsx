@@ -9,6 +9,7 @@ export default function Page() {
   const {productSlug} = params
 
   const {result, error, loading}: ResponseType = useGetProductBySlug(productSlug)
+  console.log(result,error,loading)
   return (
     <div>
       

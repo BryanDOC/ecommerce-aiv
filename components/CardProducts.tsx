@@ -4,7 +4,7 @@ import React from 'react'
 import { ZoomIn } from 'lucide-react'
 import { Button } from './ui/button'
 import Link from 'next/link'
-const CardProducts = ( {productName,productSlug, images, price, discount}: {productName: string, productSlug: string, images: any, price: number, discount: number | null }) => {
+const CardProducts = ( {productName, images, price, discount, slug}: {productName: string, slug: string, images: [], price: number, discount: number | null }) => {
   return (
     
     <div className='rounded-xl bg-white md:p-4 p-2 shadow-lg h-full md:w-[250px] w-[180px] border border-zinc-200 flex flex-col items-center hover:scale-105'>
@@ -19,7 +19,7 @@ const CardProducts = ( {productName,productSlug, images, price, discount}: {prod
       </div>
 
       <div className='mb-3 flex flex-col gap-2 w-full'>
-        <Link href={`/product/${productSlug}`} className='text-center font-bold mt-4 md:h-[50px] h-[35px]  text-sm md:text-base items-center flex justify-center '>{productName}</Link>
+        <Link href={`/product/${slug}`} className='text-center font-bold mt-4 md:h-[50px] h-[35px]  text-sm md:text-base items-center flex justify-center '>{productName}</Link>
         
       <div className='flex md:flex-col flex-row-reverse items-end gap-2 md:gap-0 md:h-[62px]  justify-end md:items-start'>
         {discount && ( 

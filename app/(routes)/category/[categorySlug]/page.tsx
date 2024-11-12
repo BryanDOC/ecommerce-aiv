@@ -1,9 +1,9 @@
 "use client"
 
 import { ResponseType } from '@/types/response'
-import useGetProductsCategory from '@/api/useGetProductsCategory'
+
 import React, { useState } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams} from 'next/navigation'
 import Header from '@/components/Header'
 import FiltersControlCategory from '../components/FiltersControlCategory'
 import SkeletonSchema from '@/components/SkeletonSchema'
@@ -19,7 +19,7 @@ export default function Page() {
   //  const {result, error, loading}: ResponseType = useGetProductsCategory(categorySlug)
   const {result, loading} : ResponseType =  useGetProducts()
   const [filterOrigin,setFilterOrigin] = useState(categorySlug)
-  const router = useRouter()
+  
    
   
   //  const formatTitle = (slug: any)=>{
