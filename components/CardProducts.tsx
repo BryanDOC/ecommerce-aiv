@@ -4,13 +4,17 @@ import React from 'react'
 import { ZoomIn } from 'lucide-react'
 import { Button } from './ui/button'
 import Link from 'next/link'
-const CardProducts = ( {productName, images, price, discount, slug}: {productName: string, slug: string, images: [], price: number, discount: number | null }) => {
+const CardProducts = ( {productName, images, price, discount, slug}: {productName: string, slug: string, images: [{
+  id:number;
+  name:string;
+  url:string;
+}], price: number, discount: number | null }) => {
   return (
     
     <div className='rounded-xl bg-white md:p-4 p-2 shadow-lg h-full md:w-[250px] w-[180px] border border-zinc-200 flex flex-col items-center hover:scale-105'>
       <div className='relative w-full md:h-[200px] h-[150px] rounded-[8px] overflow-hidden flex '>
-       
-        <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${images[0].url}`} alt="" className='w-full h-full object-cover '/>
+       <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${images?.[0]?.url}`}  alt="" className='w-full h-full object-cover ' />
+      
         <ZoomIn className='absolute top-2 right-2 bg-white p-1 rounded-full size-6' />
         {discount && (
           <p className='bg-red-600 text-white w-fit px-4 py-1 rounded-xl text-xs absolute top-2 -left-2'>-{discount}%</p>
@@ -27,7 +31,7 @@ const CardProducts = ( {productName, images, price, discount, slug}: {productNam
         )}
   
     
-    <p className='font-bold md:text-3xl text-2xl'>S/{price-(price*discount/100)}</p>
+    <p className='font-bold md:text-3xl text-2xl'>S/{price - (price * (discount ?? 0) / 100)}</p>
     
               </div>
 

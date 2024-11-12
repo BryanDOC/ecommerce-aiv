@@ -10,10 +10,15 @@ export type ProductType = {
         origin: string;
         price: number;
         images:
-           [];
+           [
+            {
+            id:number;
+            name:string;
+            url:string;
+        }
+        ];
 
-        
-        category:{
+            category:{
             data:{
                 slug:string;
                 categoryName:string;
