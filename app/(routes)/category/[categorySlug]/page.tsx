@@ -53,7 +53,7 @@ export default function Page() {
                   filteredProducts.map((product : ProductType)=>{
                     const {id, productName, images, discount,price, slug} = product
                     return (
-                      <CardProducts key={id} productName={productName} images={images} price={price} discount={discount} productSlug={slug}/>
+                      <CardProducts key={id} productName={productName} images={images} price={price} discount={discount} slug={slug}/>
                     )
                     
 })
