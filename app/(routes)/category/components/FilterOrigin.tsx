@@ -17,14 +17,15 @@ export default function FilterOrigin(props: FiltersOriginProps) {
 
   const {result,loading}: FilterTypes = useGetProductField()
   const {setFilterOrigin} = props
-
+  console.log(setFilterOrigin)
+  
   return (
     <div>
       <p className={`${chewy.className} text-3xl mb-6`}>Categorias</p>
       {loading && result ==null && (
         <p>Cargando...</p>
       )}
-      <RadioGroup onValueChange={(value => setFilterOrigin(value))}>
+      {/* <RadioGroup onValueChange={(value => setFilterOrigin(value))}>
         {result != null && result.schema.attributes.origin.enum.map((origin: string) => {
           return(
           <div key={origin} className='flex items-center space-x-2  '>
@@ -32,7 +33,7 @@ export default function FilterOrigin(props: FiltersOriginProps) {
             <Label htmlFor={origin} className='capitalize'>{origin.split("-").join(" ")}</Label>
           </div>
         )})}
-        </RadioGroup>
+        </RadioGroup> */}
     </div>
   )
 }
